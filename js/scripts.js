@@ -1,8 +1,8 @@
 $(document).ready(function(){
 	/*Elimina los números repetidos*/
 	function removeDuplicates(arr) {
-    var seen = {};
-    var arrayClean = [];
+    var seen = {},
+        arrayClean = [];
     for (var i = 0; i < arr.length; i++) {
         if (!(arr[i] in seen)) {
             arrayClean.push(arr[i]);
@@ -14,38 +14,46 @@ $(document).ready(function(){
 
 	/*Solo permite ingresar números*/
 	function validation(e){
-		var inputVal = String.fromCharCode(e.keyCode);
-		var numericReg = /^[0-9]+$/;
-		if(numericReg.test(inputVal) == false && e.keyCode != 13 && e.keyCode != 46 ) {
+		var inputVal = String.fromCharCode(e.keyCode),
+		    numericReg = /^[0-9]+$/;
+		if(numericReg.test(inputVal) == false) {
       e.preventDefault();
-    }
+    } 
+    
 	}
 
 	$("input").keypress(function(e){
 			
 			validation(e);
 
-			if (e.wich == 13 || e.keyCode == 13) { 
-				/*Obtiene el valor del input al hacer enter*/
-				var number = $("input").val().split("").sort();
-				var arrayClean = removeDuplicates(number).join("");
+			var number = $("input").val();
 
-				/*Muestra seccion de resultado*/
-				$(".result").removeClass("hidden");
+			if(number != "") {
+				if (e.wich == 13 || e.keyCode == 13) { 
+					/*Obtiene el valor del input al hacer enter*/
+					var numberSort = $("input").val().split("").sort(),
+					    arrayClean = removeDuplicates(numberSort).join("");
 
-				/*Ejecuta el scroll de seccion*/
-		    $('html, body').stop().animate({
-		        scrollTop: $(".result").offset().top
-		    }, 1000);
+				
+					/*Muestra seccion de resultado*/
+					$(".result").removeClass("hidden");
 
-		    setTimeout(function(){
-		    	/*Inserta resultado(arrayClean) en nueva seccion*/
-					$(".number-result").text(arrayClean);
-					/*Efecto de animacion con textillate*/
-		    	$(function () {
-					  $('.tlt').textillate();
-					})
-		    }, 700);
+					/*Ejecuta el scroll de seccion*/
+			    $('html, body').stop().animate({
+			        scrollTop: $(".result").offset().top
+			    }, 1000);
+
+			    setTimeout(function(){
+			    	/*Inserta resultado(arrayClean) en nueva seccion*/
+						$(".number-result").text(arrayClean);
+						/*Efecto de animacion con textillate*/
+			    	$(function () {
+						  $('.tlt').textillate();
+						})
+			    }, 700);
+			  }
+			} else {
+				$(".result").addClass("hidden");
 			}
 	});
 });
