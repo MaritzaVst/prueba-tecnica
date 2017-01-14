@@ -2,7 +2,7 @@
 	font-family: 'Lato', sans-serif;
 }
 body {
-	background-color: #FD9191;
+	
 	//padding: 70px;
 }
 .text-bold {
@@ -11,7 +11,13 @@ body {
 .text-white {
 	color: white;
 }
+.absolute-center {
+	position: absolute;
+  transform: translatey(-50%);
+  top: 50%;
+}
 .main {
+	background-color: #FD9191;
 	padding: 70px;
 	h1 {
 		font-size: 30px;
@@ -45,12 +51,9 @@ body {
 }
 section {
 	min-height: 100vh;
-	> div {
-		position: absolute;
-    transform: translatey(-50%);
-    top: 50%;
-	}
+	position: relative;
 }
 .result {
 	background-color: #FDDD8A;
+	font-size: 80px;
 }

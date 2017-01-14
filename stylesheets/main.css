@@ -1,16 +1,19 @@
 * {
   font-family: 'Lato', sans-serif; }
 
-body {
-  background-color: #FD9191; }
-
 .text-bold {
   font-weight: bold; }
 
 .text-white {
   color: white; }
 
+.absolute-center {
+  position: absolute;
+  transform: translatey(-50%);
+  top: 50%; }
+
 .main {
+  background-color: #FD9191;
   padding: 70px; }
   .main h1 {
     font-size: 30px; }
@@ -38,13 +41,11 @@ body {
     color: rgba(250, 250, 250, 0.3); }
 
 section {
-  min-height: 100vh; }
-  section > div {
-    position: absolute;
-    transform: translatey(-50%);
-    top: 50%; }
+  min-height: 100vh;
+  position: relative; }
 
 .result {
-  background-color: #FDDD8A; }
+  background-color: #FDDD8A;
+  font-size: 80px; }
 
 /*# sourceMappingURL=main.css.map */
