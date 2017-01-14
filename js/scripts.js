@@ -16,9 +16,11 @@ $(document).ready(function(){
 			if (event.wich == 13 || event.keyCode == 13) {
 				var number = $("input").val().split("").sort();
 				var arrayClean = removeDuplicates(number);
+
+				/*Ejecuta el scroll de seccion*/
+		    $('html, body').stop().animate({
+		        scrollTop: $(".result").offset().top
+		    }, 1000);
 			}
 	});
-
-	/*Inserta */
-	
 });
