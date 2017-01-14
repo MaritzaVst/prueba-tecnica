@@ -11,9 +11,22 @@ $(document).ready(function(){
     }
     return arrayClean;
 	}
-	
-	$("input").keypress(function(event){
-			if (event.wich == 13 || event.keyCode == 13) { /*Obtiene el valor del input al hacer enter*/
+
+	/*Solo permite ingresar números*/
+	function validation(e){
+		var inputVal = String.fromCharCode(e.keyCode);
+		var numericReg = /^[0-9]+$/;
+		if(numericReg.test(inputVal) == false && e.keyCode != 13 && e.keyCode != 46 ) {
+      e.preventDefault();
+    }
+	}
+
+	$("input").keypress(function(e){
+			
+			validation(e);
+
+			if (e.wich == 13 || e.keyCode == 13) { 
+				/*Obtiene el valor del input al hacer enter*/
 				var number = $("input").val().split("").sort();
 				var arrayClean = removeDuplicates(number).join("");
 
