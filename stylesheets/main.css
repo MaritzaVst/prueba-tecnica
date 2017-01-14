@@ -1,6 +1,7 @@
 * {
   font-family: 'Lato', sans-serif; }
 
+/*Utilities*/
 .text-bold {
   font-weight: bold; }
 
@@ -9,43 +10,40 @@
 
 .absolute-center {
   position: absolute;
+  -webkit-transform: translatey(-50%);
+  -moz-transform: translatey(-50%);
+  -ms-transform: translatey(-50%);
   transform: translatey(-50%);
   top: 50%; }
 
-.main {
-  background-color: #FD9191;
-  padding: 70px; }
-  .main h1 {
-    font-size: 30px; }
-  .main p {
-    font-size: 16px; }
-  .main .text-principal {
-    font-size: 40px; }
-  .main input {
-    background: transparent;
-    border: 0px;
-    border-bottom: 4px solid white;
-    outline: none;
-    margin-left: 20px; }
-  .main ::-webkit-input-placeholder {
-    /* Chrome/Opera/Safari */
-    color: rgba(250, 250, 250, 0.3); }
-  .main ::-moz-placeholder {
-    /* Firefox 19+ */
-    color: rgba(250, 250, 250, 0.3); }
-  .main :-ms-input-placeholder {
-    /* IE 10+ */
-    color: rgba(250, 250, 250, 0.3); }
-  .main :-moz-placeholder {
-    /* Firefox 18- */
-    color: rgba(250, 250, 250, 0.3); }
-
+/*-------*/
+/*General*/
 section {
   min-height: 100vh;
   position: relative; }
-
-.result {
-  background-color: #FDDD8A;
-  font-size: 80px; }
+  section.main {
+    background-color: #FD9191;
+    padding: 70px; }
+    section.main p {
+      font-size: 16px; }
+    section.main .text-principal {
+      font-size: 40px; }
+    section.main input {
+      background: transparent;
+      border: 0px;
+      border-bottom: 4px solid white;
+      outline: none;
+      margin-left: 20px; }
+    section.main ::-webkit-input-placeholder {
+      color: rgba(250, 250, 250, 0.3); }
+    section.main ::-moz-placeholder {
+      color: rgba(250, 250, 250, 0.3); }
+    section.main :-ms-input-placeholder {
+      color: rgba(250, 250, 250, 0.3); }
+    section.main :-moz-placeholder {
+      color: rgba(250, 250, 250, 0.3); }
+  section.result {
+    background-color: #FDDD8A;
+    font-size: 80px; }
 
 /*# sourceMappingURL=main.css.map */
